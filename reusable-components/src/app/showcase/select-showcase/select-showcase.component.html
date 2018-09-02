@@ -1,0 +1,11 @@
+<h1>select-showcase</h1>
+
+<form #form="ngForm">
+  <rc-select name="selectOption" [(ngModel)]="model" #selectOptionStatus="ngModel" rcAtLeastOneSelected>
+    <rc-option [(selected)]="model.prop1">Option 1</rc-option>
+    <rc-option [(selected)]="model.prop2">Option 2</rc-option>
+    <rc-option [(selected)]="model.prop3">Option 3</rc-option>
+  </rc-select>
+  <p class="error" *ngIf="selectOptionStatus.errors">At least one option has to be selected.</p>
+  <label>{{model | json}}</label>
+</form>
