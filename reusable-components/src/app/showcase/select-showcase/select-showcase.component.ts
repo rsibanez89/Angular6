@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 export interface SelectModel {
   prop1: boolean,
@@ -11,7 +11,7 @@ export interface SelectModel {
   templateUrl: './select-showcase.component.html',
   styleUrls: ['./select-showcase.component.scss']
 })
-export class SelectShowcaseComponent implements OnInit {
+export class SelectShowcaseComponent {
 
   model: SelectModel;
 
@@ -21,9 +21,6 @@ export class SelectShowcaseComponent implements OnInit {
       prop2: true,
       prop3: false
     }
-  }
-
-  ngOnInit() {
   }
 
 }

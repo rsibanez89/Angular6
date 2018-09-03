@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { OptionComponent } from './option.component';
 import { By } from '../../../../node_modules/@angular/platform-browser';
 
-fdescribe('OptionComponent', () => {
+describe('OptionComponent', () => {
   let component: OptionComponent;
   let fixture: ComponentFixture<OptionComponent>;
   let rootElement: HTMLElement;

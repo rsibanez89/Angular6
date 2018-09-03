@@ -16,15 +16,15 @@ export class SelectComponent implements ControlValueAccessor, AfterViewInit {
   
   @ContentChildren(OptionComponent) options: QueryList<OptionComponent>;
 
-  model:any;
+  model: any;
 
-  constructor() { }
+  constructor() {
+    this.model = null;
+  }
 
   ngAfterViewInit(): void {
-    console.log(this.options);
     this.options.forEach(option => {
-      option.selectedChange.subscribe((changes: any) => {
-        console.log(this.model);
+      option.selectedChange.subscribe(() => {
         this.propagateChange(this.model);
     })});
   }
@@ -32,8 +32,9 @@ export class SelectComponent implements ControlValueAccessor, AfterViewInit {
   propagateChange = (_: any) => { };
 
   writeValue(obj: any): void {
-    if(obj) 
+    if(obj) {
       this.model = obj;
+    }
   }
 
   registerOnChange(fn: any): void {
